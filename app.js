@@ -1,20 +1,21 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
-
-const api = require('./src/routes/api');
-const auth = require('./src/routes/auth');
+const { port } = require('./src/config/server.config')
+const routes = require('./src/routes');
+const tests = require('./src/tests/routes')
 
 const app = express();
-const port = process.env.PORT || 7070;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use('/public',express.static(path.join(__dirname,'./public')));
 app.use(cors());
 
-app.use(api);
-app.use(auth);
+app.use( routes );
+app.use('/testing', tests );
 
-app.listen(port, ()=>{
+app.listen(port, () => {
     console.log(`------ listening on port ${port} ------`);
 });
