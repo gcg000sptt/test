@@ -12,6 +12,7 @@ node_modules
 dist
 build
 *.local
+src/db/inti.sql
 
 # Environment variables
 .env
