@@ -1,5 +1,5 @@
-const productsRouter = require('./products.router');
-const reviewsRouter = require('./reviews.router');
+const productsRouter = require('./store/products.router');
+const reviewsRouter = require('./store/reviews.router');
 
 module.exports = (app) => {
     app.get('/', (req,res) => {

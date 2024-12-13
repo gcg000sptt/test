@@ -1,4 +1,4 @@
-const pool = require('../config/database.config')
+const pool = require('../../config/database.config')
 
 //เพิ่มสินค้าใหม่
 exports.create = async(req, res) => {
@@ -20,7 +20,7 @@ exports.create = async(req, res) => {
     }
 };
 
-//แสดงสินค้าทั้งหมด
+//ดึงข้อมูลสินค้าทั้งหมด
 exports.getAll = async(req, res) => {
     try {
         const result = await pool.query('select * from products');

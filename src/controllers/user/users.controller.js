@@ -1,4 +1,4 @@
-const pool = require('../config/database.config')
+const pool = require('../../config/database.config')
 
 const getCustomer = async(req,res) => {}
 
