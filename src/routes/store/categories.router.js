@@ -5,4 +5,5 @@ module.exports = (app) => {
     app.use('/category', router);
 
     router.get('/', categoryController.getAll);
+    router.get('/:id', categoryController.select);
 };
