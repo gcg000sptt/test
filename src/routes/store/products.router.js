@@ -7,7 +7,6 @@ module.exports = (app) => {
     router.get('/', productsController.getAll);
     router.get('/search', productsController.search);
     router.get('/item/:id', productsController.id);
-    router.get('/category', productsController.category);
     router.post('/create', productsController.create);
     router.put('/product/update/:id', productsController.update);
     router.delete('/product/delete/:id', productsController.delete);

@@ -4,7 +4,5 @@ const categoryController = require('../../controllers/store/categories.controlle
 module.exports = (app) => {
     app.use('/category', router);
 
-    router.get('/', (req,res) =>{
-        res.send('hey this is category')
-    })
+    router.get('/', categoryController.getAll);
 };

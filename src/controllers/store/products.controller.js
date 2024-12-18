@@ -1,4 +1,4 @@
-const pool = require('../../config/database.config')
+const pool = require('../../config/database.config');
 
 //เพิ่มสินค้าใหม่
 exports.create = async(req, res) => {
@@ -28,11 +28,6 @@ exports.getAll = async(req, res) => {
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
-};
-
-//แสดงหมวดหมู่สินค้า
-exports.category = async(req, res) => {
-    res.send('category api');
 };
 
 //ค้นหาสินค้า
