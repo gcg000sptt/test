@@ -1,0 +1,41 @@
+const pool = require('../../config/database.config');
+
+exports.create = async(req, res) => {
+    try {
+        
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}
+
+exports.getall = async(req, res) => {
+    try {
+        
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}
+
+exports.select = async(req, res) => {
+    try {
+        
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}
+
+exports.update = async(req, res) => {
+    try {
+        
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}
+
+exports.delete = async(req, res) => {
+    try {
+        
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}
