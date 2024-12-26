@@ -23,8 +23,8 @@ exports.select = async(req, res) => {
         const id = req.params.id;
         const query = `select * from category where id = $1`;
         const result = await pool.query(query,[id]);
-        if( result.rows.length === 0){
-            return res.status(404).json({ message:'category is not found' });
+        if( result.rowCount === 0){
+            return res.status(404).json({ error:'category not found' });
         }
         res.status(200).json(result.rows);
     } catch (error) {
@@ -34,7 +34,13 @@ exports.select = async(req, res) => {
 
 exports.update = async(req, res) => {
     try {
-        
+        const {name, id} = req.body;
+        const query = `UPDATE category SET name = $1 WHERE id = $2`;
+        const result = await pool.query(query,[name,id]);
+        if(result.rowCount === 0) {
+            return res.status(404).json({ error: 'category not found' })
+        }
+        res.status(200).json({massage: 'category updated'});
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
@@ -42,7 +48,7 @@ exports.update = async(req, res) => {
 
 exports.delete = async(req, res) => {
     try {
-        
+        const id = req.params.id;
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
